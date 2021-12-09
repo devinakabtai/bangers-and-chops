@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="#">
+    <title>TitleBlock</title>
+  </head>
+  <body>
+
+    <!-- Everything in the red box -->
+    <!-- DO: ADD HANDLER FOR H1 VARIABLE &&
+      USER LOG IN GREETING 9, 12, 16, 6, 8, 3 = 54
+    -->
+
+    <!--TODO:DONE Add metamask -->
+    <!--TODO:DONE add border, stays at top-->
+    <!--TODO:DONE output metamask account -->
+    <!--TODO: Heavy formatting/refactoringh -->
+    <!--TODO: Add links/Nav -->
+    <!--TODO: Save account number -->
+    <div id="header">
+      <h2>Title</h2><h2 id="block-underline">BLOCK</h2>
+
+      <button id='loginButton' onclick="" class="mx-auto rounded-md p-2 bg-purple-500 text-white">
+        Login with MetaMask
+      </button>
+      <p id='userWallet' class='text-lg text-gray-600 my-2'></p>
+      <script>
+        
+      </script>
+      <h2><span class="showAccount"></span></h2>
+    </div>
+
+    <!--
+      header with logo, location, and account name
+      upload file, type -> personal || public
+      personal: name of parties of interest
+      search bar, saved documents, misc.
+      4 regions of the US -> state -> county
+      who we are what we do
+    -->
+
+    <!-- this is gonna need some php, keep info -->
+    <!--TODO: take user input to a display page -->
+    <!--TODO: output relevent search results -->
+    <!--TODO:DONE take user to a personal page -->
+    <div id="search_and_sort">
+      <input type="search" id="site-search" placeholder="Names, addresses, dates, etc">
+
+      <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+          <a href="saved.html">Saved Documents</a>
+          <a href="personal.html">Personal Documents</a>
+        </div>
+      </div>
+      
+      <select name="sort-by" id="sort-by">
+        <option value="saved_documents" href="saved.html">SAVED DOCUMENTS</option>
+        <option value="personal_documents"><a href="personal.html">PERSONAL DOCUMENTS</a></option>
+      </select>
+    </div>
+    
+
+
+
+
+    <form action="index.php" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file">
+      <button type="submit" name="submit"> UPLOAD HERE </button>
+    </form>
+
+    <p> does this work?  yeah, so about us.</p>
+
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script src="./scripts.js"></script>
+  </body>
+</html>

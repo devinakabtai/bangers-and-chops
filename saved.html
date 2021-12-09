@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="#">
+    <title>TitleBlock</title>
+  </head>
+  <body>
+
+    <!-- Everything in the red box -->
+    <!-- DO: ADD HANDLER FOR H1 VARIABLE &&
+      USER LOG IN GREETING 9, 12, 16, 6, 8, 3 = 54
+    -->
+
+    <!--TODO:DONE Add metamask -->
+    <!--TODO:DONE add border, stays at top-->
+    <!--TODO:DONE output metamask account -->
+    <!--TODO: Heavy formatting/refactoringh -->
+    <!--TODO: Add links/Nav -->
+    <!--TODO: Save account number -->
+    <div id="header">
+      <h2>Title</h2><h2 id="block-underline">BLOCK</h2>
+
+      <button id='loginButton' onclick="" class="mx-auto rounded-md p-2 bg-purple-500 text-white">
+        Login with MetaMask
+      </button>
+      <p id='userWallet' class='text-lg text-gray-600 my-2'></p>
+      <script>
+        window.userWalletAddress = null
+        const loginButton = document.getElementById('loginButton')
+        const userWallet = document.getElementById('userWallet')
+    
+        function toggleButton() {
+          if (!window.ethereum) {
+            loginButton.innerText = 'MetaMask is not installed'
+            loginButton.classList.remove('bg-purple-500', 'text-white')
+            loginButton.classList.add('bg-gray-500', 'text-gray-100', 'cursor-not-allowed')
+            return false
+          }
+    
+          loginButton.addEventListener('click', loginWithMetaMask)
+        }
+    
+        async function loginWithMetaMask() {
+          const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+            .catch((e) => {
+              console.error(e.message)
+              return
+            })
+          if (!accounts) { return }
+    
+          window.userWalletAddress = accounts[0]
+          userWallet.innerText = window.userWalletAddress
+          loginButton.innerText = 'Sign out of MetaMask'
+    
+          loginButton.removeEventListener('click', loginWithMetaMask)
+          setTimeout(() => {
+            loginButton.addEventListener('click', signOutOfMetaMask)
+          }, 200)
+        }
+    
+        function signOutOfMetaMask() {
+          window.userWalletAddress = null
+          userWallet.innerText = ''
+          loginButton.innerText = 'Sign in with MetaMask'
+    
+          loginButton.removeEventListener('click', signOutOfMetaMask)
+          setTimeout(() => {
+            loginButton.addEventListener('click', loginWithMetaMask)
+          }, 200)
+        }
+    
+        window.addEventListener('DOMContentLoaded', () => {
+          toggleButton()
+        });
+      </script>
+      <h2><span class="showAccount"></span></h2>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            
+        </div>
+    </div>
+   
+    <!--TODO: Add about us section -->
+    <p> does this work?  yeah, so about us.</p>
+
+    <!--  ON-Click: add section slides the user to the input form -->
+    <!-- TODO: ADD SLIDE FEATURE
+    <div id="add_section">
+      <div class="card"><button type="button">Add...</button></div>
+    </div>
+     ON-Click: review section slides the users documents -->
+    <!-- TODO: IMPLEMENT SLIDE FEATURE
+    <div id="review_section">
+      <div class="card"><button type="button">Review...</button></div>
+    </div> -->
+    
+
+    
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script src="./scripts.js"></script>
+  </body>
+</html>

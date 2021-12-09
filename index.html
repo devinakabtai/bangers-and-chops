@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+
+    <title>TitleBlock</title>
+    
+    <link rel="stylesheet" type="text/css" href="styles.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  </head>
+  <body>
+
+    <!-- Everything in the red box -->
+    <!-- DO: ADD HANDLER FOR H1 VARIABLE &&
+      USER LOG IN GREETING 9, 12, 16, 6, 8, 3 = 54
+
+      TODOMASTER: 
+      Upload documents in a formatted manner
+      style the uploader
+      retrieve documents by state from uploads or store them to a specific folder by state
+      display documents by state page
+      save metamask account and preferences 
+      display metamask account info
+      add metamask add documents lock
+      add password documents lock
+      add user saves to a state like page
+      add user signs 
+      general styling
+
+      Day 1: Upload name formatting, state directories, state display pages.
+      Day 2: Account logging, personal page, lock screens
+      Day 3: Styling day, how are documents displayed
+      Day 4: Add signature feature, interact with doc and update display signatures/doc display
+      Day 5: Add donation bar
+      Day 6: Webscrape titles and deeds, setup BETA CODES
+      Day 7: General styling and BETA CODES
+
+
+    -->
+
+
+
+
+
+
+    <!--TODO:DONE Add metamask -->
+    <!--TODO:DONE add border, stays at top-->
+    <!--TODO:DONE output metamask account -->
+    <!--TODO:DONE Heavy formatting/refactoringh -->
+    <!--TODO: Add links/Nav -->
+    <!--TODO: Save account number -->
+    <!--TODO: displau account info -->
+
+    <div style="background-image: url('img/header.jpeg');" class="jumbotron bg-cover text-white">
+    
+      <div class="container py-5 text-center">
+          <h1 class="display-4 font-weight-bold">Title<u>BLOCK</u></h1>
+          <p class="font-italic mb-0">Documents for the modern world. Signatures and storage backed by the leaders in notarization.</p>
+          <p class="font-italic">Search Or
+              <a href="https://bootstrapious.com" class="text-white">
+                  <u>Continue As Guest</u>
+              </a>
+          </p>
+          <a href="#" role="button" class="btn btn-primary px-5" id='loginButton' onclick="">CONNECT</a>
+          <script>
+            window.userWalletAddress = null
+            const loginButton = document.getElementById('loginButton')
+            const userWallet = document.getElementById('userWallet')
+        
+            function toggleButton() {
+              if (!window.ethereum) {
+                loginButton.innerText = 'MetaMask is not installed'
+                loginButton.classList.remove('bg-purple-500', 'text-white')
+                loginButton.classList.add('bg-gray-500', 'text-gray-100', 'cursor-not-allowed')
+                return false
+              }
+        
+              loginButton.addEventListener('click', loginWithMetaMask)
+            }
+        
+            async function loginWithMetaMask() {
+              const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+                .catch((e) => {
+                  console.error(e.message)
+                  return
+                })
+              if (!accounts) { return }
+        
+              window.userWalletAddress = accounts[0]
+              userWallet.innerText = window.userWalletAddress
+              loginButton.innerText = 'Sign out of MetaMask'
+        
+              loginButton.removeEventListener('click', loginWithMetaMask)
+              setTimeout(() => {
+                loginButton.addEventListener('click', signOutOfMetaMask)
+              }, 200)
+            }
+        
+            function signOutOfMetaMask() {
+              window.userWalletAddress = null
+              userWallet.innerText = ''
+              loginButton.innerText = 'Sign in with MetaMask'
+        
+              loginButton.removeEventListener('click', signOutOfMetaMask)
+              setTimeout(() => {
+                loginButton.addEventListener('click', loginWithMetaMask)
+              }, 200)
+            }
+        
+            window.addEventListener('DOMContentLoaded', () => {
+              toggleButton()
+            });
+          </script>
+          <h2><span class="showAccount"></span></h2>
+      </div>
+    </div>
+
+    
+
+    <!-- Search bar -->
+    <!-- TODO: refactoring -->
+    <!-- TODO: links to state displays -->
+    <!-- TODO: link to personal/saved page -->
+    <div class="container mt-5">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-10">
+          <div class="card p-3 py-4">
+            <h2>An Easier way to find important Documents</h2>
+              <div class="row g-3 mt-2">
+                <div class="col-md-3">
+                  <div class="dropdown"> 
+                    <button class="btn" type="button" id="dropdownMenuButton" style="background-color: #0d6efd; color: whitesmoke;"> Public </button>
+                    <button class="btn" type="button" id="dropdownMenuButton" style="background-color: #0d6efd; color: whitesmoke;"> Private </button>
+                  </div>
+                </div>
+              <div class="col-md-6"> <input type="text" class="form-control" placeholder="Enter address e.g. street, city and state or zip"> </div>
+              <div class="col-md-3"> <button class="btn btn-secondary btn-block" style="background-color: #0d6efd;">Search Results</button> </div>
+            </div>
+            <h5 style="margin-top: 3%;">You can also search by names or dates!</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+        
+    <!-- TODO: link metamask connect -->
+    <!-- TODO: link guest account scroll -->
+  
+    <!--
+      the process of varifying documents will require storing accounts
+      when an account clicks, update the documents verified by this account
+      add a stamp coinciding with this account
+    -->
+
+    <!--
+      header with logo, location, and account name
+      upload file, type -> personal || public
+      personal: name of parties of interest
+      search bar, saved documents, misc.
+      4 regions of the US -> state -> county
+      who we are what we do
+    -->
+
+    <!-- this is gonna need some php, keep info -->
+    <!--TODO: take user input to a display page -->
+    <!--TODO: output relevent search results -->
+    <!--TODO:DONE take user to a personal page -->
+    
+    
+
+    <!--
+
+      TODO: create a display page for personal documents
+      TODO: interact with those documents with the option to save or verify said document
+      TODO: store the accounts that save and verify
+      TODO: update the documents to reflect the verification by said account
+      TODO: create a display page for saved documents
+
+    -->
+
+    <!--TODO:DONE Add photos and links to regional pages -->
+    <!--TODO: Add states drop down menu or state select-->
+    <!--TODO: Display Documents by state-->
+    <!--TODO: Add mapping/svg -->
+
+  
+    <!--TODO: upload file type, personal or public -->
+    <!--TODO: naming/cleaning/storing a standard name -->
+    <form action="index.php" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file">
+      <button type="submit" name="submit"> UPLOAD HERE </button>
+    </form>
+
+    <!--TODO:DONE Add about us section -->
+    <div class="container py-5">
+      <h2 class="h3 font-weight-bold">About TitleBLOCK</h2>
+      <div class="row">
+          <div class="col-lg-10 mb-4">
+              <p class="font-italic text-muted"> We specialize in watching. Whether it's the closing of a property sale, a large loan or transfer of escrow, or land title amendments. We check the validity of the documents submitted to us and sign off with our stamp of approval.</p>
+              <p class="font-italic text-muted">With a growing database of public records and a secure blockchain for hosting private and personal documents TitleBLOCK meets the needs of Businesses and Individuals alike. <br> Banks, real estate agents, surveyors, builders, or anyone with an important contract may rely on us for ease of access, security, privacy, and accountability.</p>
+          </div>
+      </div>
+    </div>
+    
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script src="./scripts.js"></script>
+  </body>
+</html>
