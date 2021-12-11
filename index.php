@@ -20,13 +20,13 @@ if (isset($_POST['submit'])) {
             if ($fileSize < 1000000) {
                 $fileNameNew = uniqid('', true).".".$fileActualExt;
                 $fileDestination = './uploads/'.$fileNameNew;
-
-                move_uploaded_file($fileTmpName, $fileDestination);
+                //<console class="log">$fileDestination</console>
+                //move_uploaded_file($fileTmpName, $fileDestination);
                 //stuff w/header
-                print_r($fileNameNew);
-                //print_r($fileDestination);
+                //print_r($fileNameNew);
+                header("location: index.html?$fileDestination");
 
-                header("Location: index.html?upload_success");
+                //header("Location: index.html?upload_success");
             }
             else {
                 echo "too big file";
