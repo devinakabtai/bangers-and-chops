@@ -144,6 +144,59 @@
                   <div class="dropdown"> 
                     <button class="btn" type="button" id="dropdownMenuButton" style="background-color: #0d6efd; color: whitesmoke;"> Public </button>
                     <button class="btn" type="button" id="dropdownMenuButton" style="background-color: #0d6efd; color: whitesmoke;"> Private </button>
+                    <select>
+                      <option value="AL">Alabama</option>
+                      <option value="AK">Alaska</option>
+                      <option value="AZ">Arizona</option>
+                      <option value="AR">Arkansas</option>
+                      <option value="CA">California</option>
+                      <option value="CO">Colorado</option>
+                      <option value="CT">Connecticut</option>
+                      <option value="DE">Delaware</option>
+                      <option value="DC">District Of Columbia</option>
+                      <option value="FL">Florida</option>
+                      <option value="GA">Georgia</option>
+                      <option value="HI">Hawaii</option>
+                      <option value="ID">Idaho</option>
+                      <option value="IL">Illinois</option>
+                      <option value="IN">Indiana</option>
+                      <option value="IA">Iowa</option>
+                      <option value="KS">Kansas</option>
+                      <option value="KY">Kentucky</option>
+                      <option value="LA">Louisiana</option>
+                      <option value="ME">Maine</option>
+                      <option value="MD">Maryland</option>
+                      <option value="MA">Massachusetts</option>
+                      <option value="MI">Michigan</option>
+                      <option value="MN">Minnesota</option>
+                      <option value="MS">Mississippi</option>
+                      <option value="MO">Missouri</option>
+                      <option value="MT">Montana</option>
+                      <option value="NE">Nebraska</option>
+                      <option value="NV">Nevada</option>
+                      <option value="NH">New Hampshire</option>
+                      <option value="NJ">New Jersey</option>
+                      <option value="NM">New Mexico</option>
+                      <option value="NY">New York</option>
+                      <option value="NC">North Carolina</option>
+                      <option value="ND">North Dakota</option>
+                      <option value="OH">Ohio</option>
+                      <option value="OK">Oklahoma</option>
+                      <option value="OR">Oregon</option>
+                      <option value="PA">Pennsylvania</option>
+                      <option value="RI">Rhode Island</option>
+                      <option value="SC">South Carolina</option>
+                      <option value="SD">South Dakota</option>
+                      <option value="TN">Tennessee</option>
+                      <option value="TX">Texas</option>
+                      <option value="UT">Utah</option>
+                      <option value="VT">Vermont</option>
+                      <option value="VA">Virginia</option>
+                      <option value="WA">Washington</option>
+                      <option value="WV">West Virginia</option>
+                      <option value="WI">Wisconsin</option>
+                      <option value="WY">Wyoming</option>
+                    </select>
                   </div>
                 </div>
               <div class="col-md-6"> <input type="text" class="form-control" placeholder="Enter address e.g. street, city and state or zip"> </div>
@@ -154,6 +207,62 @@
         </div>
       </div>
     </div>
+
+    <!-- Interactive map. Link to php display -->
+    <!-- TODO: link state.svg to the display php page. Takes users search variable input and displays those documents -->
+    <img src="/img/Blank_US_Map_(states_only).svg" usemap="#image-map">
+    <map name="image-map">
+        <area target="_blank" alt="Washington" title="Washington" href="" coords="64,11,90,26,85,5,175,28,161,90,124,80,79,77,72,62,58,57" shape="poly">
+        <area target="_blank" alt="Oregon" title="Oregon" href="" coords="59,60,70,64,79,81,127,84,161,93,168,101,147,126,154,131,140,177,27,146" shape="poly">
+        <area target="_blank" alt="California" title="California" href="" coords="29,149,94,168,78,231,155,353,139,385,92,381,41,326,4,218" shape="poly">
+        <area target="_blank" alt="Idaho" title="Idaho" href="" coords="176,28,190,31,185,58,203,86,196,109,206,107,217,140,244,136,236,197,142,179" shape="poly">
+        <area target="_blank" alt="Montana" title="Montana" href="" coords="193,32,188,59,206,85,199,106,209,105,219,135,246,131,356,143,363,46" shape="poly">
+        <area target="_blank" alt="Nevada" title="Nevada" href="" coords="97,167,188,190,163,317,153,310,149,335,80,231" shape="poly">
+        <area target="_blank" alt="Arizona" title="Arizona" href="" coords="169,297,254,312,236,434,200,430,138,392,159,352,151,339,155,314,164,320" shape="poly">
+        <area target="_blank" alt="New Mexico" title="New Mexico" href="" coords="257,313,359,323,349,432,255,427,251,438,236,435" shape="poly">
+        <area target="_blank" alt="Utah" title="Utah" href="" coords="190,191,237,200,234,217,266,223,253,308,169,295" shape="poly">
+        <area target="_blank" alt="Colorado" title="Colorado" href="display.php" coords="268,224,257,309,374,323,380,236" shape="poly">
+        <area target="_blank" alt="Wyoming" title="Wyoming" href="" coords="249,132,356,146,347,231,236,216,241,171" shape="poly">
+        <area target="_blank" alt="North Dakota" title="North Dakota" href="" coords="360,123,473,127,463,58,365,46" shape="poly">
+        <area target="_blank" alt="South Dakota" title="South Dakota" href="" coords="354,187,441,191,472,202,470,130,360,123" shape="poly">
+        <area target="_blank" alt="Kansas" title="Kansas" href="" coords="382,257,494,260,504,280,504,325,377,321" shape="poly">
+        <area target="_blank" alt="Nebraska" title="Nebraska" href="" coords="354,189,441,194,473,207,489,256,381,254,386,233,349,228" shape="poly">
+        <area target="_blank" alt="Oklahoma" title="Oklahoma" href="" coords="362,323,360,333,410,336,410,377,460,397,508,398,504,327" shape="poly">
+        <area target="_blank" alt="Texas" title="Texas" href="" coords="285,431,352,432,361,336,408,337,408,380,456,399,517,402,519,434,528,458,520,486,457,570,420,568,379,483,359,483,345,500,315,475" shape="poly">
+        <area target="_blank" alt="Minnesota" title="Minnesota" href="" coords="466,59,592,62,539,110,528,131,532,155,557,179,474,181" shape="poly">
+        <area target="_blank" alt="Wisconsin" title="Wisconsin" href="" coords="561,102,541,110,532,129,534,149,550,166,559,173,561,189,569,202,614,199,610,180,624,131,610,143,605,126,569,116" shape="poly">
+        <area target="_blank" alt="Michigan" title="Michigan" href="" coords="563,101,607,84,674,112,699,180,687,205,631,211,629,127,612,139,606,124,570,114" shape="poly">
+        <area target="_blank" alt="Maine" title="Maine" href="" coords="866,91,878,131,884,139,930,84,917,69,898,35,877,36" shape="poly">
+        <area target="_blank" alt="Iowa" title="Iowa" href="" coords="474,183,476,205,488,246,556,245,565,235,559,223,569,223,575,213,565,199,557,188,557,181" shape="poly">
+        <area target="_blank" alt="Illinois " title="Illinois " href="" coords="572,205,579,215,573,224,563,226,569,235,557,246,562,264,576,279,584,283,579,297,592,305,599,322,619,304,625,282,622,269,620,214,612,201" shape="poly">
+        <area target="_blank" alt="Indiana" title="Indiana" href="" coords="623,218,666,211,672,271,649,292,623,300,627,281" shape="poly">
+        <area target="_blank" alt="Kentucky" title="Kentucky" href="" coords="601,322,623,302,655,292,675,271,703,275,722,298,700,321,599,331" shape="poly">
+        <area target="_blank" alt="West Virginia" title="West Virginia" href="" coords="737,227,741,246,758,242,760,254,770,242,780,241,765,270,756,266,748,293,727,299,709,278,725,259,734,250" shape="poly">
+        <area target="_blank" alt="Ohio" title="Ohio" href="" coords="731,196,736,224,733,250,706,275,675,267,667,209" shape="poly">
+        <area target="_blank" alt="Missouri " title="Missouri " href="" coords="490,248,552,247,558,264,578,284,575,296,590,305,596,323,591,342,581,334,505,336,506,276" shape="poly">
+        <area target="_blank" alt="Loussiana" title="Loussiana" href="" coords="520,414,530,454,521,484,579,501,614,495,594,456,560,456,569,434,567,413" shape="poly">
+        <area target="_blank" alt="Arkansas" title="Arkansas" href="" coords="505,337,518,410,566,408,591,346,579,334" shape="poly">
+        <area target="_blank" alt="Tennesse" title="Tennesse" href="" coords="587,366,594,334,731,317,688,357" shape="poly">
+        <area target="_blank" alt="North Carolina" title="North Carolina" href="" coords="734,316,691,356,715,353,724,346,746,344,752,352,771,350,806,374,865,291,835,299,765,313" shape="poly">
+        <area target="_blank" alt="South Carolina" title="South Carolina" href="" coords="707,361,724,350,743,344,751,355,770,352,804,374,770,420" shape="poly">
+        <area target="_blank" alt="Georgia" title="Georgia" href="" coords="667,361,701,357,764,419,762,443,743,443,740,452,691,452,686,430,689,418,682,409" shape="poly">
+        <area target="_blank" alt="Alabama" title="Alabama" href="" coords="625,466,621,432,622,365,666,362,686,448,642,447,640,466" shape="poly">
+        <area target="_blank" alt="Mississippi" title="Mississippi" href="" coords="563,454,573,428,570,409,584,369,619,366,618,431,622,470,606,476,597,454" shape="poly">
+        <area target="_blank" alt="Florida" title="Florida" href="" coords="645,450,643,466,721,475,777,563,795,559,795,523,761,444,743,445,743,454" shape="poly">
+        <area target="_blank" alt="Virginia" title="Virginia" href="" coords="724,300,704,318,832,296,822,287,818,269,800,263,795,248,780,248,770,273,756,269,751,294" shape="poly">
+        <area target="_blank" alt="New York" title="New York" href="" coords="843,195,822,188,815,177,743,191,737,161,788,150,792,115,829,104" shape="poly">
+        <area target="_blank" alt="Penssylvania" title="Penssylvania" href="" coords="730,190,740,187,745,196,813,178,825,190,825,224,743,242" shape="poly">
+        <area target="_blank" alt="Maryland" title="Maryland" href="" coords="759,238,813,229,823,258,837,255,835,262,822,268,801,262,798,243,783,244" shape="poly">
+        <area target="_blank" alt="New Jersey" title="New Jersey" href="" coords="823,226,838,241,846,212,841,195,826,192,826,216" shape="poly">
+        <area target="_blank" alt="Deleware" title="Deleware" href="" coords="825,257,846,254,823,227,813,226" shape="poly">
+        <area target="_blank" alt="Connecticut" title="Connecticut" href="" coords="841,173,846,191,871,180,868,165" shape="poly">
+        <area target="_blank" alt="Rhode Island" title="Rhode Island" href="" coords="870,165,880,162,886,181,874,183" shape="poly">
+        <area target="_blank" alt="New Hampshire" title="New Hampshire" href="" coords="856,152,880,146,862,94,855,116" shape="poly">
+        <area target="_blank" alt="Vermont" title="Vermont" href="" coords="831,101,858,94,853,115,853,150,840,155" shape="poly">
+        <area target="_blank" alt="Massachusetts " title="Massachusetts " href="" coords="838,157,840,169,880,160,888,180,905,174,898,142" shape="poly">
+        <area target="_blank" alt="Alaska" title="Alaska" href="" coords="1,426,146,426,213,491,212,548,245,589,5,589" shape="poly">
+        <area target="_blank" alt="Hawaii " title="Hawaii " href="" coords="218,493,300,492,355,548,354,591,250,592,216,549" shape="poly">
+    </map>
 
 
         
