@@ -64,7 +64,7 @@
           $atext="Show";}
           if(substr("$dirArray[$index]", 0, 1) != $hide) {
           
-          // Gets File Names
+          //File Names Are
           $name=$dirArray[$index];
           $namehref=$dirArray[$index];
           
@@ -74,7 +74,7 @@
           // Gets file size 
           $size=number_format(filesize($dirArray[$index]));
           
-          // Gets Date Modified Data
+          //gets Date Modified Data. dunt work for shit
           $modtime=date("M j Y g:i A", filemtime($dirArray[$index]));
           $timekey=date("YmdHis", filemtime($dirArray[$index]));
 
@@ -90,12 +90,13 @@
           if($name=="."){$name=". (Current Directory)"; $extn="&lt;System Dir&gt;";}
           if($name==".."){$name=".. (Parent Directory)"; $extn="&lt;System Dir&gt;";}
 
+          //variable localization
           $input = $namehref;
           $output = explode('_', $input);
           //output 0 = city
           //output 1 = number
           //output 2 = street
-          //output 3 = street suffix ++ must be cleaned
+          //output 3 = street & suffix ++ must be cleaned
           $jumper = explode('.', $output[3]);
           $output[3] = $jumper[0];
           
@@ -105,7 +106,7 @@
 
           <div class='container mt-1'>
         <div class='row d-flex justify-content-center'>
-            <div class='card' style='width: 18rem;'>
+            <div class='card' style='width: 45rem;'>
 
                 <!--<embed src='Colorado/2200_BALSAM_DR-pr.pdf' type='application/pdf' width='100%' height='600px' />
                     Use this for the popup so they're easily viewable.
@@ -114,30 +115,12 @@
 
                 <div class='card-body'>
                 <!--<embed class='card-img-top' src='Colorado/$namehref' type='image/jpg' alt='card cap'/>-->
-                <h5 class='card-title'>$output[0]</h5>
-                <p class='card-text'>$output[1] $output[2] $output[3] <br> last edited: $modtime</p>
+                <h5 class='card-title'>$output[1] $output[2] $output[3]</h5>
+                <p class='card-text'>$output[0] <br> last edited: $modtime</p>
                 <a href='#' class='btn btn-primary'>Save</a><a href='#' class='btn btn-primary'>Sign</a>
                 </div>
             </div>
-            <div class='card' style='width: 18rem;'>
-                <!--<embed src='Colorado/2200_BALSAM_DR-pr.pdf' type='application/pdf' width='100%' height='600px' />
-                    Use this for the popup so they're easily viewable.
-                -->
-                <div class='card-body'>
-                <h5 class='card-title'>$class</h5>
-                <p class='card-text'>$name <br> last edited: $modtime</p>
-                <a href='#' class='btn btn-primary'>Save</a><a href='#' class='btn btn-primary'>Sign</a>
-                </div>
-            </div>
-            <div class='card' style='width: 18rem;'>
-                <!--<embed src='Colorado/2200_BALSAM_DR-pr.pdf' type='application/pdf' width='100%' height='600px' />
-                    Use this for the popup so they're easily viewable.
-                -->
-                <div class='card-body'>
-                <h5 class='card-title'>$class</h5>
-                <p class='card-text'>$name <br> last edited: $modtime</p>
-                <a href='#' class='btn btn-primary'>Save</a><a href='#' class='btn btn-primary'>Sign</a>
-                </div>
+           
             </div>
         </div>
     </div>
