@@ -12,7 +12,7 @@
 
   <div id="container">
   
-    <h1>Colorado Property Records</h1>
+    <h1>Colorado Property Records         <a href="index.html"><span>return to search</span></a></h1>
     
     <table class="sortable">
       <thead>
@@ -99,6 +99,8 @@
           //output 3 = street & suffix ++ must be cleaned
           $jumper = explode('.', $output[3]);
           $output[3] = $jumper[0];
+
+          $name = explode('.', $namehref);
           
           // Print 'em
           print
@@ -106,7 +108,7 @@
 
           <div class='container mt-1'>
         <div class='row d-flex justify-content-center'>
-            <div class='card' style='width: 45rem;'>
+            <div class='card' style='width: 60rem;'>
 
                 <!--<embed src='Colorado/2200_BALSAM_DR-pr.pdf' type='application/pdf' width='100%' height='600px' />
                     Use this for the popup so they're easily viewable.
@@ -114,10 +116,15 @@
                 -->
 
                 <div class='card-body'>
-                <!--<embed class='card-img-top' src='Colorado/$namehref' type='image/jpg' alt='card cap'/>-->
+                <embed class='card-img-top float-right' src='img/$name[0].png' type='image/jpg' alt='card cap' style='width: 15rem;'/>
                 <h5 class='card-title'>$output[1] $output[2] $output[3]</h5>
-                <p class='card-text'>$output[0] <br> last edited: $modtime</p>
-                <a href='#' class='btn btn-primary'>Save</a><a href='#' class='btn btn-primary'>Sign</a>
+                <p class='card-text'>$output[0] <br> last edited: img/$name[0].jpg</p>
+                <a href='#' class='btn btn-primary'>Save</a>  <a href='#' class='btn btn-primary'>Sign</a>
+                <details>
+    <summary>Details</summary>
+    Something small enough to escape casual notice.
+    <embed src='Colorado/$namehref' width='800px' height='2100px' />
+</details>
                 </div>
             </div>
            
